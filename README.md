@@ -1,2 +1,2 @@
 # Timur-Ivan-Alexey-repos
-[![CMake](https://github.com/certified-juniors/Timur-Ivan-Alexey-repos/actions/workflows/cmake.yml/badge.svg)](https://github.com/certified-juniors/Timur-Ivan-Alexey-repos/actions/workflows/cmake.yml?event=push)
+[![CMake](https://github.com/certified-juniors/Timur-Ivan-Alexey-repos/actions/workflows/cmake.yml/badge.svg)](https://github.com/certified-juniors/Timur-Ivan-Alexey-repos/actions/workflows/cmake.yml)
