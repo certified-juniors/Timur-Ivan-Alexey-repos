@@ -1,2 +1,2 @@
 # Timur-Ivan-Alexey-repos
-for VK education
+[![CMake](.github/workflows/cmake.yml/badge.svg)](.github/workflows/cmake.yml)
