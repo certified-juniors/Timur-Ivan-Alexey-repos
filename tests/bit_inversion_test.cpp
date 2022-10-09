@@ -11,6 +11,6 @@ TEST(Bit, BaseTest) {
     run(ss_in, ss_out);
     unsigned int result = 0;
     ss_out >> result;
-    unsigned int expected_result = 27;
+    unsigned int expected_result = 26;
     EXPECT_EQ(expected_result, result);
 }
