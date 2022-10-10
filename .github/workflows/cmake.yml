@@ -30,7 +30,7 @@ jobs:
 
     - name: Generate coverage report
       run: lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
-      genhtml -o report coverage.info
+        genhtml -o report coverage.info
 
     - name: Upload coverage reports to Codecov
       run: curl -Os https://uploader.codecov.io/latest/linux/codecov
