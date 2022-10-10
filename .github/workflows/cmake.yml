@@ -24,15 +24,19 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+    
+    - name: Install lcov
+      run: apt install lcov
 
     - name: Generate coverage report
       run: lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
+      genhtml -o report coverage.info
 
     - name: Upload coverage reports to Codecov
       run: curl -Os https://uploader.codecov.io/latest/linux/codecov
         chmod +x codecov
         ./codecov -t ${CODECOV_TOKEN}
-        
+
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.  
