@@ -26,7 +26,7 @@ jobs:
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
     
     - name: Install lcov
-      run: apt install lcov
+      run: sudo apt install lcov
 
     - name: Generate coverage report
       run: lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
