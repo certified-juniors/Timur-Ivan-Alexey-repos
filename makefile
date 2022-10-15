@@ -1,0 +1,2 @@
+check:
+	./linter/run.sh
