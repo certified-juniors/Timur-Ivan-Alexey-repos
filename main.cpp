@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./BitCounter/BitCounter.h"
+#include "BitCounter/BitCounter.h"
 
 int main() {
     run(std::cin, std::cout);

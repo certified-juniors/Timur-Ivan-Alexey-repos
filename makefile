@@ -1,2 +1,2 @@
 check:
-	./linter/run.sh
+	./linters/run.sh

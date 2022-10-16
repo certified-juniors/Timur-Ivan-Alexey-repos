@@ -11,7 +11,7 @@ int CountBits(unsigned number) {
   return count;
 }
 
-void run(std ::istream &input, std::ostream &output) {
+void run(std::istream &input, std::ostream &output) {
     unsigned number;
     input >> number;
     output << CountBits(number) << std::endl;
