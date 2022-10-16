@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BitCounter/BitCounter.h"
+#include "./BitCounter/BitCounter.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
