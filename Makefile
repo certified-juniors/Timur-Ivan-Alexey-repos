@@ -1,2 +1,0 @@
-check:
-	./linters/run.sh
