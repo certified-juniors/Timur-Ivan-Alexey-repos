@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -o pipefail
 
 function print_header() {
@@ -22,12 +20,9 @@ function check_log() {
 }
 
 print_header "RUN cppcheck"
-check_log "cppcheck project --enable=all --inconclusive --error-exitcode=1 -I project/include --suppress=missingIncludeSystem" "\(information\)"
-
-print_header "RUN clang-tidy"
-check_log "clang-tidy project/src/* project/include/* -warnings-as-errors=* -extra-arg=-std=c99 -- -Iproject/include" "Error (?:reading|while processing)"
+check_log "cppcheck -q -j4 --enable=warning,style,performance,portability ../BitCounter/BitCounter.cpp ../BitCounter/BitCounter.h"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=c project/include/* project/src/*" "Can't open for reading"
+check_log "cpplint --extensions=c++ ../BitCounter/*" "Can't open for reading"
 
 print_header "SUCCESS"

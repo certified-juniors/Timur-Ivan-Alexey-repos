@@ -1,7 +1,7 @@
 #include "BitCounter.h"
 
 int CountBits(unsigned number) {
-    int count = 0;
+  int count = 0;
   while (number > 0) {
     if (number & 1) {  // проверка на то, что последний бит единичный
       count++;
