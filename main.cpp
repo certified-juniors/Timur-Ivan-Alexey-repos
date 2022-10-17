@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./memoryError/MemoryError.h"
+#include "MemoryError.h"
 
 
 int main(){
