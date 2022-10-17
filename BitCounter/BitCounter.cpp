@@ -1,12 +1,12 @@
 #include "BitCounter.h"
 
 int CountBits(unsigned number) {
-  int count;
+  int count = 0;
   while (number > 0) {
-    if (number & 1) { // проверка на то, что последний бит единичный
+    if (number & 1) {
       count++;
     }
-    number >>= 2; // сдвигаем число на 2 бита вправо
+    number >>= 2;
   }
   return count;
 }
