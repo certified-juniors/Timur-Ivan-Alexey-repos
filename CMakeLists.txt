@@ -15,9 +15,6 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${MEMORYERROR_LIB_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${MEMORYERROR_LIB_LIBRARIES})
 
-
-
-#option(BUILD_FOR_TEST "build for test" OFF)
-#if(BUILD_FOR_TEST)
-#add_custom_target(COMMAND valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes $<TARGET_FILE:${PROJECT_NAME}>)
-#endif()
+add_custom_command (TARGET ${PROJECT_NAME}
+    COMMAND bash -c "valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes $<TARGET_FILE:${PROJECT_NAME}>"
+)
