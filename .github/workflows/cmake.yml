@@ -32,5 +32,17 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
       
+    - name: Install cpplint
+      working-directory: ${{github.workspace}}
+      shell: bash         
+      run: |         
+          pip install wheel
+          pip install cpplint
+
+    - name: cpplint
+      working-directory: ${{runner.workspace}}/uast      
+      shell: bash         
+      run: python -m cpplint --recursive --exclude=source/catch.hpp --filter=-legal/copyright,-build/include_subdir source/*
+
     - name: Linters report
       run: make check
