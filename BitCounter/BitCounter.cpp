@@ -13,6 +13,7 @@ int CountBits(unsigned number) {
 
 void run(std::istream &input, std::ostream &output) {
   unsigned number;
+
   input >> number;
   output << CountBits(number) << std::endl;
 }

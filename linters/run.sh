@@ -19,10 +19,14 @@ function check_log() {
     fi
 }
 
-# print_header "RUN cppcheck"
-# check_log "cppcheck -q -j4 --enable=warning,style,performance,portability ../BitCounter/BitCounter.cpp ../BitCounter/BitCounter.h"
+print_header "RUN cppcheck"
+check_log "cppcheck -q -j4 --enable=warning,style,performance,portability ./BitCounter/BitCounter.cpp ./BitCounter/BitCounter.h"
+
+print_header "RUN clang-format"
+# check_log "clang-format -i ../BitCounter/BitCounter.h"
+check_log "clang-format -i -style=file ./BitCounter/*.cpp ./BitCounter/*.h"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=c++ ../BitCounter/*" "Can't open for reading"
+check_log "cpplint --extensions=c++ ./BitCounter/*" "Can't open for reading"
 
 print_header "SUCCESS"

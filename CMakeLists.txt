@@ -19,4 +19,4 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_LIB_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_LIB_LIBRARIES})
 
-# add_subdirectory(linters)
+add_subdirectory(linters)
