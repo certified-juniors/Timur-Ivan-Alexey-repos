@@ -39,10 +39,5 @@ jobs:
           pip install wheel
           pip install cpplint
 
-    - name: cpplint
-      working-directory: ${{runner.workspace}}/uast      
-      shell: bash         
-      run: python -m cpplint --recursive --exclude=source/catch.hpp --filter=-legal/copyright,-build/include_subdir source/*
-
     - name: Linters report
       run: make check
