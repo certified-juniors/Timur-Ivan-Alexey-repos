@@ -34,7 +34,6 @@ jobs:
     - name: Install utils
       run: |
         sudo apt install lcov
-        sudo apt install genhtml
 
     - name: Generate coverage report
       run: | 
