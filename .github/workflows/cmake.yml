@@ -31,15 +31,15 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
-    - name: Install
-          run: |
-          sudo apt install lcov
-          sudo apt install genhtml
+    - name: Install utils
+      run: |
+        sudo apt install lcov
+        sudo apt install genhtml
 
     - name: Generate coverage report
-          run: | 
-          lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
-          genhtml -o report coverage.info
+      run: | 
+        lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
+        genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
       with:
