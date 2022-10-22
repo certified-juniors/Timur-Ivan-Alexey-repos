@@ -37,7 +37,7 @@ jobs:
     - name: Gnerate report
       working-directory: ${{github.workspace}}/build
       run: |
-        lcov -t "tests" -o coverage.info -c -d bit_inversion/ --no-external
+        lcov -t "tests" -o coverage.info -c -d bit_inversion/
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
