@@ -34,11 +34,12 @@ jobs:
     - name: Install utils
       run: |
         sudo apt install lcov
+        
+    - uses: actions/checkout@v3
 
-    - name: Generate coverage report
-      run: | 
-        lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
-        # genhtml -o report coverage.info
+    - run: lcov -t "tests/bit_inversion_test" -o coverage.info -c -d bit_inversion/
+
+    - run: genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
       with:
