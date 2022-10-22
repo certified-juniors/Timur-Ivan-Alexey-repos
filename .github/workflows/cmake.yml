@@ -43,7 +43,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: buil/report
+        path: build/report
         
     # - uses: actions/checkout@master
     # - uses: codecov/codecov-action@v3
