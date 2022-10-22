@@ -38,6 +38,7 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: |
         lcov -t "tests" -o coverage.info -c -d bit_inversion/
+        lcov --remove coverage.info user/*
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
