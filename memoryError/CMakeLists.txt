@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(memoryError_lib)
 
-file(GLOB SOURCES "*.cpp" "*.h")
+file(GLOB SOURCES "*.cpp")
 file(GLOB INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
 message("SOURCES = ${SOURCES}")
