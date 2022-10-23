@@ -4,6 +4,11 @@ project(memory)
 include(CTest)
 enable_testing()
 
+OPTION(WITH_MEMCHECK "Run with memcheck" OFF) #FFFFFFFFFFFFFFF
+#SET(CMAKE_CXX_STANDARD 17) #CCCCCCCCCCCCCCCCCC
+#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror") #CCCCCCCCC
+
+
 file(GLOB INCLUDE_DIRS memoryError)
 
 add_subdirectory(${INCLUDE_DIRS})
@@ -22,11 +27,18 @@ add_custom_command (TARGET ${PROJECT_NAME}
     COMMAND bash -c "valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes $<TARGET_FILE:${PROJECT_NAME}>"
 )
 
+SET(memcheck_command)
+
+if (WITH_MEMCHECK)
+        message("Memcheck enabled")
+        SET(memcheck_command ${CMAKE_SOURCE_DIR}/memtest/memtest.sh)
+        ADD_TEST(
+        NAME BaseTest
+        COMMAND ${memcheck_command})
+else()
+        message("Memcheck disabled")
+endif() ######################
 
 
-OPTION(WITH_MEMCHECK "Run with memcheck" OFF)
-
-SET(CMAKE_CXX_STANDARD 17)
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 
 ENABLE_TESTING()
